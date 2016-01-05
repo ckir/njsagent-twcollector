@@ -12,7 +12,7 @@ var bunyanoptions = {
         level: 'debug',
         stream: process.stdout
     }, {
-        level: 'debug',
+        level: 'trace',
         path: path.resolve(process.env.NJSAGENT_APPROOT + '/logs/' + appName + '.log'),
     }]
 };
@@ -25,43 +25,43 @@ new Logger(bunyanoptions, process.env.NBGC_AES, process.env.NBGC_KEY, calendar_l
     log.info('Logging started');
 
     if (! process.env.TWCOLLECTOR_PGSQL) {
-        log.fatal('Missing TWCOLLECTOR_PGSQL environment variable');
+        log.error('Missing TWCOLLECTOR_PGSQL environment variable');
         process.exit(1);
     } else {
         log.trace('TWCOLLECTOR_PGSQL=' + process.env.TWCOLLECTOR_PGSQL);
     }
     if (! process.env.TWCOLLECTOR_TWITTER_CONSUMER_KEY) {
-        log.fatal('Missing TWCOLLECTOR_TWITTER_CONSUMER_KEY environment variable');
+        log.error('Missing TWCOLLECTOR_TWITTER_CONSUMER_KEY environment variable');
         process.exit(1);
     } else {
         log.trace('TWCOLLECTOR_TWITTER_CONSUMER_KEY=' + process.env.TWCOLLECTOR_TWITTER_CONSUMER_KEY);
     }
     if (! process.env.TWCOLLECTOR_TWITTER_CONSUMER_SECRET) {
-        log.fatal('Missing TWCOLLECTOR_TWITTER_CONSUMER_SECRET environment variable');
+        log.error('Missing TWCOLLECTOR_TWITTER_CONSUMER_SECRET environment variable');
         process.exit(1);
     } else {
         log.trace('TWCOLLECTOR_TWITTER_CONSUMER_SECRET=' + process.env.TWCOLLECTOR_TWITTER_CONSUMER_SECRET);
     }
     if (! process.env.TWCOLLECTOR_TWITTER_ACCESS_TOKEN_KEY) {
-        log.fatal('Missing TWCOLLECTOR_TWITTER_ACCESS_TOKEN_KEY environment variable');
+        log.error('Missing TWCOLLECTOR_TWITTER_ACCESS_TOKEN_KEY environment variable');
         process.exit(1);
     } else {
         log.trace('TWCOLLECTOR_TWITTER_ACCESS_TOKEN_KEY=' + process.env.TWCOLLECTOR_TWITTER_ACCESS_TOKEN_KEY);
     }
     if (! process.env.TWCOLLECTOR_TWITTER_ACCESS_TOKEN_SECRET) {
-        log.fatal('Missing TWCOLLECTOR_TWITTER_ACCESS_TOKEN_SECRET environment variable');
+        log.error('Missing TWCOLLECTOR_TWITTER_ACCESS_TOKEN_SECRET environment variable');
         process.exit(1);
     } else {
         log.trace('TWCOLLECTOR_TWITTER_ACCESS_TOKEN_SECRET=' + process.env.TWCOLLECTOR_TWITTER_ACCESS_TOKEN_SECRET);
     }
     if (! process.env.TWCOLLECTOR_MODE) {
-        log.fatal('Missing TWCOLLECTOR_MODE environment variable');
+        log.error('Missing TWCOLLECTOR_MODE environment variable');
         process.exit(1);
     } else {
         log.trace('TWCOLLECTOR_MODE=' + process.env.TWCOLLECTOR_MODE);
     }
     if (! process.env.TWCOLLECTOR_SOURCE) {
-        log.fatal('Missing TWCOLLECTOR_SOURCE environment variable');
+        log.error('Missing TWCOLLECTOR_SOURCE environment variable');
         process.exit(1);
     } else {
         log.trace('TWCOLLECTOR_SOURCE=' + process.env.TWCOLLECTOR_SOURCE);
