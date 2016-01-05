@@ -1,4 +1,6 @@
 'use strict';
+console.log(require('util').inspect(process, { showHidden: true, depth: null }));
+process.exit();
 global.Promise = require('bluebird');
 var path = require('path');
 global.appName = path.basename(__dirname);
