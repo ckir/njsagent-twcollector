@@ -98,11 +98,9 @@ setInterval(function() {
             time: new Date().toISOString()
         }
     };
-    if (typeof process.send !== 'undefined') {
-        process.send(reply);
-    } else {
-        console.log(reply);
-    }
+
+    log.info(new Date().toISOString());
+
 }, 3000);    
 
 }, function logNotOK(err){
