@@ -1,13 +1,13 @@
 'use strict';
 global.Promise = require('bluebird');
 var path = require('path');
-global.appName = process.env.HEROKU_APP_NAME + ':' + path.basename(__dirname);
+global.appName = path.basename(__dirname);
 
 var Logger = require('node-bunyan-gcalendar');
 var calendar_level = 'fatal';
 
 var bunyanoptions = {
-    name: appName,
+    name: process.env.HEROKU_APP_NAME + ':' + appName,
     streams: [{
         level: 'debug',
         stream: process.stdout
