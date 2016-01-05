@@ -1,10 +1,9 @@
 'use strict';
-console.log(require('util').inspect(process, { showHidden: true, depth: null }));
-process.exit();
 global.Promise = require('bluebird');
 var path = require('path');
 global.appName = path.basename(__dirname);
 
+console.log(require('util').inspect(process, { showHidden: true, depth: null }));
 var Logger = require('node-bunyan-gcalendar');
 var calendar_level = 'fatal';
 
