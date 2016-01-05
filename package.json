@@ -18,6 +18,7 @@
   "homepage": "https://github.com/ckir/njsagent-twcollector#readme",
   "dependencies": {
     "bluebird": "^3.1.1",
-    "bunyan": "^1.5.1"
+    "bunyan": "^1.5.1",
+    "node-bunyan-gcalendar": "^1.0.2"
   }
 }
