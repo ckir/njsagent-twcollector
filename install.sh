@@ -3,4 +3,5 @@
 set -e
 set -o pipefail
 
-npm install
+pip install -r requirements.txt
+
