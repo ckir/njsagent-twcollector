@@ -65,7 +65,6 @@ found = 0
 lastdata = datetime.now()
 inserted = []
 
-
 class RepeatedTimer(object):
     def __init__(self, interval, function, *args, **kwargs):
         self._timer = None
@@ -115,6 +114,7 @@ class StdOutListener(StreamListener):
             try:
                 userid = tweet['user']['id_str']
                 if userid in sources:
+                    print self.is_valid_content(tweet)
                     if self.is_valid_content(tweet):
                         if not tweet['id_str'] in inserted:
                             found += 1
@@ -143,14 +143,8 @@ class StdOutListener(StreamListener):
             log.warning("Problem tokenizing " + tweet["text"] + " " + str(e))
             return False
         for token in tokens:
-            try:
-                p = re.compile('^' + re.escape(token), re.IGNORECASE)
-            except Exception, e:
-                log.warning("Bad regular expression for token " + str(token))
-                continue
             for country_term in country_terms:
-                m = p.match(country_term)
-                if m:
+                if token.strip().lower() == country_term.strip().lower():
                     return True
         return False
 
